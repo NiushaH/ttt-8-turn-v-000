@@ -51,22 +51,18 @@ end
 def turn(board)
   puts "Please enter 1-9:"
 
-  #get input
   user_input = gets.chomp
+  puts "Your move is to space #{user_input}."
 
-  #convert user_input to index
   position = input_to_index(user_input)
 
-  #make the move for input
   if valid_move?(board, position)
     move(board, position)
     display_board(board)
     puts 'Great move!  Now sit tight while "O" makes their move.'
 
   else
-    #ask for input again until you get a valid input
     puts "Your move, #{user_input}, is invalid.  Try again."
     turn(board)
-    
     end
 end
